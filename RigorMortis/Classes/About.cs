@@ -7,7 +7,7 @@ namespace RigorMortis.Properties.Classes
 {
     public class About : CommandsInterface
     {
-        public void Execute(RichTextBox commandBox)
+        public void Execute(RichTextBox commandBox, string[] args)
         {
             string aboutText = @"
 ┌─────────────────────────────────────────────┐

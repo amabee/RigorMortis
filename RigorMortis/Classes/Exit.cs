@@ -10,7 +10,7 @@ namespace RigorMortis.Properties.Classes
 {
     public class Exit : CommandsInterface
     {
-        public void Execute(RichTextBox commandBox)
+        public void Execute(RichTextBox commandBox, string[] args)
         {
             commandBox.AppendText("Exiting RigorMortis..." + Environment.NewLine);
             System.Windows.Forms.Application.Exit();

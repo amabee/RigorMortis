@@ -9,6 +9,6 @@ namespace RigorMortis.Interface
 {
     public interface CommandsInterface
     {
-        void Execute(RichTextBox commandBox);
+        void Execute(RichTextBox commandBox, string[] args );
     }
 }

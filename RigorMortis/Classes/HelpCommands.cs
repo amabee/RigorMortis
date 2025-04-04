@@ -10,7 +10,7 @@ namespace RigorMortis.Properties.Classes
 {
     public class HelpCommands : CommandsInterface
     {
-        public void Execute(RichTextBox commandBox)
+        public void Execute(RichTextBox commandBox, string[] args)
         {
             commandBox.AppendText("Available commands:" + Environment.NewLine);
             commandBox.AppendText("clear || cls - Clears the terminal." + Environment.NewLine);

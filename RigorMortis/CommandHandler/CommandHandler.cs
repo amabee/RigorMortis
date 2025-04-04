@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RigorMortis.Interface;
@@ -30,9 +32,7 @@ namespace RigorMortis
                 { "exit", new Exit() },
                 { "quit", new Exit() },
                 { "about", new About() },
-                { "credits", new ClearTerminal() },
-                { "license", new ClearTerminal() },
-                { "version", new ClearTerminal() }
+                { "whois", new WhoIs()},
             };
         }
 
@@ -50,26 +50,35 @@ namespace RigorMortis
             {
                 keyEvent.SuppressKeyPress = true;
 
-                string command = commandTextBox.Text.Trim();
+                string command = commandTextBox.Text.Trim().ToLower();
 
                 if (string.IsNullOrEmpty(command))
                 {
                     return;
                 }
 
+                string[] parts = Regex.Matches(command, @"[\""].+?[\""]|[^ ]+")
+                               .Cast<Match>()
+                               .Select(m => m.Value.Replace("\"", ""))
+                               .ToArray();
+
+                string commandName = parts[0];
+                string[] args = parts.Skip(1).ToArray();
+
                 AppendText(this.commandBox, $"RigorMortis> {command}" + Environment.NewLine, System.Drawing.Color.White);
 
-                if (commandDictionary.ContainsKey(command.ToLower())) {
-                    
-                    commandDictionary[command.ToLower()].Execute(commandBox);
+                if (commandDictionary.TryGetValue(commandName, out CommandsInterface commandObj))
+                {
+                    commandObj.Execute(commandBox, args);
                 }
                 else
                 {
-                    AppendText(this.commandBox, $"'{command}' is not recognized as a command." + Environment.NewLine, System.Drawing.Color.Red);  
+                    commandBox.AppendText($"'{commandName}' is not recognized as a command.\n");
                 }
 
                 commandTextBox.Clear();
             }
         }
+
     }
 }

@@ -47,10 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\clear_terminal.cs" />
-    <Compile Include="CommandHandler\About.cs" />
+    <Compile Include="Classes\About.cs" />
+    <Compile Include="Classes\WhoIs.cs" />
     <Compile Include="CommandHandler\CommandHandler.cs" />
-    <Compile Include="CommandHandler\Exit.cs" />
-    <Compile Include="CommandHandler\HelpCommands.cs" />
+    <Compile Include="Classes\Exit.cs" />
+    <Compile Include="Classes\HelpCommands.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

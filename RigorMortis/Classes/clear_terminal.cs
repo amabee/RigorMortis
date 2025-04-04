@@ -10,7 +10,7 @@ namespace RigorMortis.Properties.Classes
 {
     public class ClearTerminal : CommandsInterface
     {
-        public void Execute(RichTextBox commandBox)
+        public void Execute(RichTextBox commandBox, string[] args)
         {
             commandBox.Clear();
         }
