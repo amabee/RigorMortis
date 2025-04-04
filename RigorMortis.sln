@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RigorMortis", "RigorMortis\RigorMortis.csproj", "{331C4204-8A11-4B3F-877A-834686BC08BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{331C4204-8A11-4B3F-877A-834686BC08BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{331C4204-8A11-4B3F-877A-834686BC08BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{331C4204-8A11-4B3F-877A-834686BC08BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{331C4204-8A11-4B3F-877A-834686BC08BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FFAD2C6-4BE2-46C7-9161-4F5B3962B625}
+	EndGlobalSection
+EndGlobal
